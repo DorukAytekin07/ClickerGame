@@ -1,17 +1,12 @@
 import { useState } from "react";
 import MoneyText from "./Components/MoneyText";
+import Button from "./Components/Button"
 function App() {
   const [currentMoney, setCurrentMoney] = useState(0);
 
   return (
     <>
-      <div className="center">
-        <button className="money-button" onClick={() => {
-          setCurrentMoney(currentMoney + 1)
-          console.log(currentMoney)
-
-        }}>Click</button>
-      </div >
+      <Button callback={setCurrentMoney} currentMoney={currentMoney} />
       <MoneyText currentMoney={currentMoney} />
     </>
   );
