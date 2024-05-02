@@ -1,0 +1,10 @@
+.money-text-div {
+  display: flex;
+  justify-content: end;
+}
+
+.money-text-p {
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
