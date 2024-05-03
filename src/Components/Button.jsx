@@ -1,10 +1,15 @@
-function Button({ callback, currentMoney }) {
+function Button({ callback, currentMoney, incrementScale }) {
   return (
     <>
       <div className="center">
-        <button className="money-button" onClick={() => {
-          callback(currentMoney + 1)
-        }}>Click</button>
+        <button className="button-82-pushable" onClick={() => {
+          callback(currentMoney + incrementScale)
+        }}>
+          <span className="button-82-shadow"></span>
+          <span className="button-82-edge"></span>
+          <span className="button-82-front text">
+            Click
+          </span></button>
       </div >
     </>
   );
