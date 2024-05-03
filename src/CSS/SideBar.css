@@ -9,6 +9,8 @@
   height: 100vh;
   width: 250px;
   transition: ease-in 0.4s;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .top_section {
