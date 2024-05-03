@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import {
   FaBars,
+  FaHome,
   FaStore
 } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
+    {
+      path: "/",
+      name: "Home",
+      icon: <FaHome />
+    },
     {
       path: "/store",
       name: "Store",
@@ -27,13 +33,14 @@ const Sidebar = ({ children }) => {
         </div>
         {
           menuItem.map((item, index) => (
-            <NavLink to={item.path} key={index} className="link" activeclassName="active">
+            <Link to={item.path} key={index} className="link" activeclassname="active">
               <div className="icon">{item.icon}</div>
               <div style={{ display: isOpen ? "block" : "none" }} className="link_text"><p>{item.name}</p></div>
-            </NavLink>
+            </Link>
           ))
         }
       </div>
+      <main>{children}</main>
     </div>
   );
 };
